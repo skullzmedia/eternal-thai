@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Customer Testimony - Eternal Touch Russian Spa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+    .testimonial-carousel, .video-carousel {
+        display: flex;
+        overflow-x: auto;
+        gap: 2rem;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 1rem;
+    }
+    .testimonial-card, .video-card {
+        min-width: 350px;
+        max-width: 350px;
+        background: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        padding: 2rem 1.5rem;
+        scroll-snap-align: start;
+        margin-bottom: 1rem;
+    }
+    .testimonial-card .stars {
+        color: #ffb400;
+        margin-bottom: 0.5rem;
+    }
+    .testimonial-card .author {
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-top: 1rem;
+    }
+    .video-card iframe {
+        width: 100%;
+        height: 200px;
+        border-radius: 0.75rem;
+    }
+    </style>
+</head>
+<body>
+    <!-- Preheader -->
+    <div class="preheader text-white text-center py-2" id="preheader">
+        <p class="mb-0 d-inline">Get Flat 20% Off on All Massage Therapies - Valid Only Today!</p>
+    </div>
+    <!-- Header -->
+    <header class="fixed-top bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="Eternal Touch Russian Spa" height="60">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="fa-solid fa-xmark close-icon d-none" style="font-size: 1.7rem;"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Our Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#gallery">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="testimonial.html">Testimonials</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-2" href="tel:+918329945463">Book Appointment</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Banner -->
+    <section class="hero-section py-5" style="background: url('images/gallery/ambiance/5.jpg') center/cover no-repeat; min-height: 350px; display: flex; align-items: center;">
+        <div class="container text-center text-white banner-title-padding">
+            <h1 class="section-title">Our Customer Testimony</h1>
+            <p class="section-subtitle">Real stories from real customers who have experienced our exceptional service</p>
+        </div>
+    </section>
+    <!-- Google Review Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-2">Our Google Review</h2>
+            <p class="section-text text-center mb-5">Check out our 5 star google review rating from various of our happy customers</p>
+            <div class="testimonial-carousel">
+                <!-- Placeholder reviews, replace with real ones -->
+                <div class="testimonial-card">
+                    <div class="stars mb-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Absolutely the best spa experience I've ever had. The ambiance is serene and the therapists are true professionals!"</p>
+                    <div class="author">Priya S.</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars mb-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"The Russian massage was incredible. I left feeling completely rejuvenated. Highly recommend!"</p>
+                    <div class="author">Rahul M.</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars mb-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Clean, professional, and relaxing. Will definitely visit again!"</p>
+                    <div class="author">Elena P.</div>
+                </div>
+                <!-- Add more reviews as needed -->
+            </div>
+            <div class="text-center mt-4">
+                <a href="https://g.page/r/Cd8Qw1Qw1Qw1EAI/review" target="_blank" class="btn btn-primary btn-lg" style="font-weight:600;letter-spacing:0.5px;">Leave a review</a>
+            </div>
+        </div>
+    </section>
+    <!-- Video Testimony Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-2">Hear directly from our Customers...</h2>
+            <div class="video-carousel">
+                <!-- Placeholder YouTube videos, replace with real links -->
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Customer Testimonial 1" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U" title="Customer Testimonial 2" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Customer Testimonial 3" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <!-- Add more video cards as needed -->
+            </div>
+        </div>
+    </section>
+    <!-- Pre Footer -->
+    <section class="pre-footer py-5 bg-dark text-white">
+        <div class="container text-center">
+            <h2 class="section-title">Experience the Eternal Touch Difference</h2>
+            <p class="section-text">Join us in our journey of wellness and discover the transformative power of expert care in a serene environment.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg">Book your Spa Experience</a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="images/logo.png" alt="Eternal Touch Russian Spa" class="footer-logo mb-3">
+                    <p>A luxury spa in Candolim offering expert therapies, serene ambiance, and premium wellness experiences.</p>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="thai-massage.html">Thai Massage</a></li>
+                        <li><a href="lymphatic-drainage.html">Lymphatic Drainage Massage</a></li>
+                        <li><a href="russian-massage.html">Russian Massage</a></li>
+                        <li><a href="deep-tissue-massage.html">Deep Tissue Massage</a></li>
+                        <li><a href="aromatherapy-massage.html">Aromatherapy Massage</a></li>
+                        <li><a href="shiatsu-massage.html">Shiatsu Massage</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt"></i> Shop No. 569, Near Novotel Goa Candolim, Candolim Beach Road, Candolim, Goa - 403515</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+918329945463">08329945463</a></li>
+                        <li><i class="fas fa-clock"></i> Monday - Sunday (9am - 3am)</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">Copyright © 2025 Eternal Touch Russian Spa. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-decoration-none me-3">Terms & Conditions</a>
+                    <a href="#" class="text-decoration-none">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- WhatsApp Popup -->
+    <div class="whatsapp-popup">
+        <a href="https://wa.me/918329945463" class="whatsapp-button">
+            <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+    </div>
+    <!-- Call Popup -->
+    <div class="call-popup">
+        <a href="tel:+918329945463" class="call-button">
+            <i class="fas fa-phone fa-1x"></i>
+        </a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

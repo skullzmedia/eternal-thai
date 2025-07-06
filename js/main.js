@@ -397,4 +397,61 @@ document.addEventListener('DOMContentLoaded', function() {
             preheader.classList.add('collapsed');
         });
     }
+
+    // Therapists Slider Logic
+    const therapistsSlider = document.querySelector('.therapists-slider');
+    const therapistsPrev = document.getElementById('therapistsPrev');
+    const therapistsNext = document.getElementById('therapistsNext');
+
+    if (therapistsSlider && therapistsPrev && therapistsNext) {
+        const scrollAmount = window.innerWidth >= 992 ? 3 : 1; // Scroll 3 items on desktop, 1 on mobile
+        const therapistItems = therapistsSlider.querySelectorAll('.therapist-item');
+        const itemWidth = therapistItems[0].offsetWidth + 32; // Include gap
+
+        therapistsPrev.addEventListener('click', function() {
+            const currentScroll = therapistsSlider.scrollLeft;
+            const newScroll = Math.max(0, currentScroll - (itemWidth * scrollAmount));
+            therapistsSlider.scrollTo({
+                left: newScroll,
+                behavior: 'smooth'
+            });
+        });
+
+        therapistsNext.addEventListener('click', function() {
+            const currentScroll = therapistsSlider.scrollLeft;
+            const maxScroll = therapistsSlider.scrollWidth - therapistsSlider.clientWidth;
+            const newScroll = Math.min(maxScroll, currentScroll + (itemWidth * scrollAmount));
+            therapistsSlider.scrollTo({
+                left: newScroll,
+                behavior: 'smooth'
+            });
+        });
+
+        // Update scroll amount on window resize
+        window.addEventListener('resize', () => {
+            const newScrollAmount = window.innerWidth >= 992 ? 3 : 1;
+            // Recalculate item width after resize
+            const newItemWidth = therapistItems[0].offsetWidth + 32;
+            
+            // Update the scroll amount for future clicks
+            therapistsPrev.onclick = function() {
+                const currentScroll = therapistsSlider.scrollLeft;
+                const newScroll = Math.max(0, currentScroll - (newItemWidth * newScrollAmount));
+                therapistsSlider.scrollTo({
+                    left: newScroll,
+                    behavior: 'smooth'
+                });
+            };
+
+            therapistsNext.onclick = function() {
+                const currentScroll = therapistsSlider.scrollLeft;
+                const maxScroll = therapistsSlider.scrollWidth - therapistsSlider.clientWidth;
+                const newScroll = Math.min(maxScroll, currentScroll + (newItemWidth * newScrollAmount));
+                therapistsSlider.scrollTo({
+                    left: newScroll,
+                    behavior: 'smooth'
+                });
+            };
+        });
+    }
 }); 

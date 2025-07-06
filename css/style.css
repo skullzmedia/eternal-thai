@@ -937,7 +937,13 @@ header.fixed-top.bg-white {
 }
 
 header.fixed-top.bg-dark {
-    margin-top: 38px;
+    margin-top: 32px;
+}
+
+@media (max-width: 768px) {
+    header.fixed-top.bg-dark {
+        margin-top: 56px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1034,11 +1040,11 @@ header.fixed-top.bg-dark {
 .therapist-item {
     flex: 0 0 30%;
     min-width: 260px;
-    max-width: 300px;
+    max-width: 280px;
     background: #fff;
     border-radius: 1.2rem;
     box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-    padding: 1.5rem 1rem 1.2rem 1rem;
+    padding: 1.5rem 1rem;
     margin: 0 auto;
     scroll-snap-align: start;
     text-align: center;
@@ -1048,10 +1054,10 @@ header.fixed-top.bg-dark {
     box-shadow: 0 8px 32px rgba(0,0,0,0.12);
 }
 .therapist-img-wrapper {
-    width: 110px;
-    height: 110px;
+    width: 100%;
+    height: 250px;
     margin: 0 auto;
-    border-radius: 50%;
+    border-radius: 0.8rem;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     background: #f8f9fa;
@@ -1061,17 +1067,6 @@ header.fixed-top.bg-dark {
     height: 100%;
     object-fit: cover;
     object-position: center;
-}
-.therapist-name {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 0.2rem;
-}
-.therapist-specialty {
-    font-size: 0.98rem;
-    color: #888;
-    margin-bottom: 0;
 }
 .therapists-arrow {
     position: absolute;
@@ -1099,14 +1094,177 @@ header.fixed-top.bg-dark {
     color: #fff;
     opacity: 1;
 }
+
 @media (max-width: 992px) {
-    .therapist-item { flex: 0 0 45%; min-width: 200px; }
+    .therapist-item { 
+        flex: 0 0 30%; 
+        min-width: 250px;
+        max-width: 280px; 
+    }
 }
 @media (max-width: 768px) {
     .about-hero-section, .location-section { padding-top: 90px; padding-bottom: 30px; }
     .about-hero-section .hero-content, .location-section .location-content { padding: 0; }
     .therapists-slider-wrapper { max-width: 98vw; }
-    .therapist-item { flex: 0 0 80vw; min-width: 80vw; max-width: 90vw; }
+    .therapist-item { 
+        flex: 0 0 80vw; 
+        min-width: 80vw; 
+        max-width: 90vw; 
+    }
     .therapists-arrow-left { left: 0; }
     .therapists-arrow-right { right: 0; }
+}
+
+.banner-title-padding {
+    padding-top: 100px;
+    padding-bottom: 40px;
+}
+h1.section-title {
+    color: white;
+}
+
+#preloader {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw; height: 100vh;
+    background: #fff;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s;
+}
+#preloader-logo {
+    width: 120px;
+    height: auto;
+}
+#preloader.hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s;
+}
+
+/* === GALLERY PAGE STYLES === */
+
+.gallery-hero-section {
+    padding-top: 140px;
+    padding-bottom: 60px;
+    background: linear-gradient(90deg, #fff 60%, #f8f9fa 100%);
+}
+
+.gallery-grid-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.8rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .gallery-hero-section {
+        padding-top: 90px;
+        padding-bottom: 30px;
+    }
+    
+    .gallery-item img {
+        height: 200px;
+    }
+}
+
+/* === CONTACT PAGE STYLES === */
+
+.contact-card {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    border: none;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover::before {
+    transform: scaleX(1);
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.contact-card .fas {
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .fas {
+    transform: scale(1.1);
+    color: var(--accent-color);
+}
+
+.contact-card h5 {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.contact-card p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+.contact-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: var(--accent-color);
+}
+
+.contact-card .text-primary {
+    color: var(--primary-color) !important;
+}
+
+@media (max-width: 768px) {
+    .contact-card {
+        margin-bottom: 1rem;
+    }
+    
+    .contact-card:hover {
+        transform: translateY(-4px);
+    }
 }
