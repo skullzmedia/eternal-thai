@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternal Touch Russian Spa - Candolim, Goa</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preheader -->
+    <div class="preheader text-white text-center py-2" id="preheader">
+        <p class="mb-0 d-inline">Get Flat 20% Off on All Massage Therapies - Valid Only Today!</p>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed-top bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.png" alt="Eternal Touch Russian Spa" height="60">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Our Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#gallery">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white ms-2" href="tel:+918329945463">Book Appointment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-primary ms-2" href="tel:+918329945463">Call Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section py-5 hero-slider">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Experience Tranquility at Eternal Touch Russian Spa</h1>
+                        <h2 class="hero-subtitle">Candolim, Goa</h2>
+                        <p class="hero-text">
+                            Discover the perfect blend of luxury and wellness in the heart of Goa's most beautiful coastal destination.
+                        </p>
+                        <a href="tel:+918329945463" class="btn btn-primary btn-lg">Book Appointment: 08329945463</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <div class="hero-image position-relative" id="landingHeroSlider" onclick="window.location.href='tel:+918329945463';" style="cursor: pointer;">
+                        <img src="images/banner-slider/landing/1.jpeg" class="img-fluid rounded hero-slide-img active" alt="Spa Banner 1">
+                        <img src="images/banner-slider/landing/2.jpeg" class="img-fluid rounded hero-slide-img" alt="Spa Banner 2" style="display:none;">
+                        <img src="images/banner-slider/landing/3.jpeg" class="img-fluid rounded hero-slide-img" alt="Spa Banner 3" style="display:none;">
+                        <button class="hero-arrow hero-arrow-left btn btn-light rounded-circle shadow-sm" id="heroPrev" aria-label="Previous image" onclick="event.stopPropagation();"><i class="fas fa-chevron-left"></i></button>
+                        <button class="hero-arrow hero-arrow-right btn btn-light rounded-circle shadow-sm" id="heroNext" aria-label="Next image" onclick="event.stopPropagation();"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="about-content">
+                        <h2 class="section-title">Top Massage Spa in Candolim, North Goa</h2>
+                        <p class="section-text">
+                            Experience the ultimate in relaxation at our luxury massage spa in the heart of Candolim, Goa. With world-class therapists, premium products, and serene ambiance, we offer a rejuvenating escape from the everyday. Discover tailored treatments, top-class amenities, and unmatched service—because you deserve nothing but the best.
+                        </p>
+                        <a href="tel:+918329945463" class="btn btn-primary">Book Appointment: 08329945463</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="about-image">
+                        <img src="images/landing/about/about.webp" alt="Luxury Spa in Candolim" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Signature Massage Therapies</h2>
+                <p class="section-text">Check out our Massage Service and book appointment today</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Russian Massage -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <img src="images/landing/therapy/1.jpeg" alt="Russian Massage" class="service-image">
+                        <div class="service-content">
+                            <h3 class="service-title">Russian Massage</h3>
+                            <p class="service-description">
+                                If you're looking for a massage that combines intensity with deep relaxation, our Russian Massage might be exactly what you need...
+                            </p>
+                            <a href="tel:+918329945463" class="btn btn-primary">Book Now: 08329945463</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lymphatic Drainage Massage -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <img src="images/landing/therapy/2.jpeg" alt="Lymphatic Drainage Massage" class="service-image">
+                        <div class="service-content">
+                            <h3 class="service-title">Lymphatic Drainage Massage</h3>
+                            <p class="service-description">
+                                Feeling bloated, sluggish, or low on energy? A Lymphatic Drainage Massage might be just what your body is craving...
+                            </p>
+                            <a href="tel:+918329945463" class="btn btn-primary">Book Now: 08329945463</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deep Tissue Massage -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <img src="images/landing/therapy/3.jpeg" alt="Deep Tissue Massage" class="service-image">
+                        <div class="service-content">
+                            <h3 class="service-title">Deep Tissue Massage</h3>
+                            <p class="service-description">
+                                Struggling with persistent muscle aches or stiffness? Discover how our Deep Tissue Massage can bring lasting relief and deep relaxation...
+                            </p>
+                            <a href="tel:+918329945463" class="btn btn-primary">Book Now: 08329945463</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thai Massage -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <img src="images/landing/therapy/4.jpeg" alt="Thai Massage" class="service-image">
+                        <div class="service-content">
+                            <h3 class="service-title">Thai Massage</h3>
+                            <p class="service-description">
+                                Looking to feel more flexible, energized, and centered? Discover the ancient healing powers of our authentic Thai Massage experience...
+                            </p>
+                            <a href="tel:+918329945463" class="btn btn-primary">Book Now: 08329945463</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shiatsu Massage -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <img src="images/landing/therapy/5.jpeg" alt="Shiatsu Massage" class="service-image">
+                        <div class="service-content">
+                            <h3 class="service-title">Shiatsu Massage</h3>
+                            <p class="service-description">
+                                Craving a healing massage that aligns body and mind? Discover the powerful benefits of our authentic Shiatsu Massage therapy...
+                            </p>
+                            <a href="tel:+918329945463" class="btn btn-primary">Book Now: 08329945463</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aromatherapy Massage -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <img src="images/landing/therapy/6.jpeg" alt="Aromatherapy Massage" class="service-image">
+                        <div class="service-content">
+                            <h3 class="service-title">Aromatherapy Massage</h3>
+                            <p class="service-description">
+                                Need a calming escape for your senses and soul? Let our Aromatherapy Massage take you on a fragrant journey of relaxation...
+                            </p>
+                            <a href="tel:+918329945463" class="btn btn-primary">Book Now: 08329945463</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Our Sanctuary in Pictures</h2>
+            <div class="gallery-slider-wrapper position-relative">
+                <div class="gallery-slider">
+                    <div class="gallery-item">
+                        <img src="images/landing/gallery/1.jpg" alt="Spa Ambiance" class="img-fluid rounded">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/landing/gallery/2.avif" alt="Spa Ambiance" class="img-fluid rounded">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/landing/gallery/3.jpeg" alt="Spa Ambiance" class="img-fluid rounded">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/landing/gallery/4.jpeg" alt="Spa Interior" class="img-fluid rounded">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/landing/gallery/5.jpg" alt="Spa Interior" class="img-fluid rounded">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/landing/gallery/6.jpg" alt="Treatment Room" class="img-fluid rounded">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/landing/gallery/7.webp" alt="Treatment Room" class="img-fluid rounded">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/landing/gallery/8.jpg" alt="Treatment Room" class="img-fluid rounded">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/landing/gallery/9.avif" alt="Treatment Room" class="img-fluid rounded">
+                    </div>
+                </div>
+                <button class="gallery-arrow gallery-arrow-left btn btn-light rounded-circle shadow-sm" id="galleryPrev" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+                <button class="gallery-arrow gallery-arrow-right btn btn-light rounded-circle shadow-sm" id="galleryNext" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-2">Guests</h2>
+            <div class="text-center mb-5" style="font-family: 'Playfair Display', serif; font-size:2rem; letter-spacing:1px;">WHY THEY TRUST ETERNAL TOUCH</div>
+            <div class="testimonial-slider d-flex justify-content-center align-items-center position-relative" style="max-width: 700px; margin: 0 auto;">
+                <button class="testimonial-arrow btn btn-light rounded-circle shadow-sm me-3" id="testimonialPrev" aria-label="Previous testimonial" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-slide w-100">
+                    <div class="d-flex flex-column flex-md-row align-items-center text-center text-md-start">
+                        <img src="/images/placeholder.svg" alt="Guest" class="rounded-circle me-md-4 mb-3 mb-md-0" style="width:70px;height:70px;object-fit:cover;">
+                        <div>
+                            <div style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--primary-color);font-weight:600;">Priya S.</div>
+                            <div style="font-size:1rem;color:#888;">Eternal Touch Spa, Candolim</div>
+                            <div class="testimonial-text mt-3 mb-2">“Absolutely the best spa experience I've ever had. The ambiance is serene and the therapists are true professionals!”</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="testimonial-arrow btn btn-light rounded-circle shadow-sm ms-3" id="testimonialNext" aria-label="Next testimonial" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="text-center mt-4">
+                <a href="https://share.google/kYtUprvnLeY4GrSPd" class="btn btn-primary btn-lg" style="font-weight:600;letter-spacing:0.5px;">Leave a review</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre Footer -->
+    <section class="pre-footer py-5 bg-dark text-white">
+        <div class="container text-center">
+            <h2 class="section-title">Escape Fatigue, Embrace Renewal</h2>
+            <p class="section-text">Experience the ultimate renewal with our tailored therapies designed to restore your body and mind.</p>
+            <a href="tel:+918329945463" class="btn btn-primary btn-lg">Book your Spa Experience: 08329945463</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="images/logo.png" alt="Eternal Touch Russian Spa" class="footer-logo mb-3">
+                    <p>A luxury spa in Candolim offering expert therapies, serene ambiance, and premium wellness experiences.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Contact Information</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt"></i> Shop No. 569, Near Novotel Goa Candolim, Candolim Beach Road, Candolim, Goa - 403515</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+918329945463">08329945463</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@eternaltouchspa.com">info@eternaltouchspa.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Location</h5>
+                    <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.08);">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m2!2m1!1sEternal%20Touch%20Russian%20Spa%20Candolim!3m1!1s0x3bbfc1b2e2c1b6e1:0x7e2e8e9e06cfaf4a?hl=en" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">Copyright © 2025 Eternal Touch Russian Spa. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="terms.html" class="text-decoration-none me-3">Terms & Conditions</a>
+                    <a href="privacy.html" class="text-decoration-none">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Popup -->
+    <div class="whatsapp-popup">
+        <a href="https://wa.me/918329945463" class="whatsapp-button">
+            <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+    </div>
+
+    <!-- Call Popup -->
+    <div class="call-popup">
+        <a href="tel:+918329945463" class="call-button">
+            <i class="fas fa-phone fa-1x"></i>
+        </a>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html> 

@@ -1,7 +1,7 @@
 // Initialize Bootstrap Carousel
-document.addEventListener('DOMContentLoaded', function() {
-    // Hero Carousel
-    const heroCarousel = document.getElementById('heroCarousel');
+// Only run hero carousel code if the element exists
+const heroCarousel = document.getElementById('heroCarousel');
+if (heroCarousel) {
     const carouselInner = heroCarousel.querySelector('.carousel-inner');
     
     // Add carousel items
@@ -24,13 +24,20 @@ document.addEventListener('DOMContentLoaded', function() {
         const carouselItem = document.createElement('div');
         carouselItem.className = `carousel-item ${index === 0 ? 'active' : ''}`;
         carouselItem.innerHTML = `
-            <div class="carousel-image">
+            <div class="carousel-image" style="cursor:pointer;">
                 <img src="${item.desktopImage}" class="d-none d-md-block w-100" alt="Desktop Hero Image">
                 <img src="${item.mobileImage}" class="d-md-none w-100 h-100 object-fit-cover" alt="Mobile Hero Image">
             </div>
-        
         `;
         carouselInner.appendChild(carouselItem);
+    });
+
+    // Add click event to redirect to contact page when banner is clicked
+    // Attach to all .carousel-image elements inside the carousel
+    carouselInner.querySelectorAll('.carousel-image').forEach(imageDiv => {
+        imageDiv.addEventListener('click', function() {
+            window.location.href = 'contact.html';
+        });
     });
 
     // Initialize carousel
@@ -38,61 +45,68 @@ document.addEventListener('DOMContentLoaded', function() {
         interval: 5000,
         wrap: true
     });
+}
 
-    // Services Data
-    const services = [
-        {
-            title: 'Russian Massage',
-            duration: '60 Min',
-            price: '₹ 2,000',
-            tags: ['Muscle Relief', 'Performance Enhancing'],
-            description: 'If you\'re looking for a massage that combines intensity with deep relaxation, our Russian Massage might be exactly what you need...',
-            image: '/images/services/russian-massage.jpeg'
-        },
-        {
-            title: 'Lymphatic Drainage Massage',
-            duration: '60 Min',
-            price: '₹ 2,000',
-            tags: ['Detoxification', 'Therapeutic'],
-            description: 'Feeling bloated, sluggish, or low on energy? A Lymphatic Drainage Massage might be just what your body is craving...',
-            image: '/images/services/lymphatic-drainage.png'
-        },
-        {
-            title: 'Deep Tissue Massage',
-            duration: '90 Min',
-            price: '₹ 3,000',
-            tags: ['Restorative', 'Pain Relief'],
-            description: 'Struggling with persistent muscle aches or stiffness? Discover how our Deep Tissue Massage can bring lasting relief and deep relaxation...',
-            image: '/images/services/deep-tissue-massage.webp'
-        },
-        {
-            title: 'Thai Massage',
-            duration: '60 Min',
-            price: '₹ 2,000',
-            tags: ['Energy Flow', 'Enhanced Flexibility'],
-            description: 'Looking to feel more flexible, energized, and centered? Discover the ancient healing powers of our authentic Thai Massage experience...',
-            image: '/images/services/thai-massage.jpg'
-        },
-        {
-            title: 'Shiatsu Massage',
-            duration: '75 Min',
-            price: '₹ 2,500',
-            tags: ['Emotional Well-being', 'Recharge'],
-            description: 'Craving a healing massage that aligns body and mind? Discover the powerful benefits of our authentic Shiatsu Massage therapy...',
-            image: '/images/services/shiatsu-massage.jpg'
-        },
-        {
-            title: 'Aromatherapy Massage',
-            duration: '60 Min',
-            price: '₹ 2,000',
-            tags: ['Body Nourishment', 'Stress Relief'],
-            description: 'Need a calming escape for your senses and soul? Let our Aromatherapy Massage take you on a fragrant journey of relaxation...',
-            image: '/images/services/aromatherapy-massage.webp'
-        }
-    ];
+// Services Data
+const services = [
+    {
+        title: 'Russian Massage',
+        duration: '60 Min',
+        price: '₹ 2,000',
+        tags: ['Muscle Relief', 'Performance Enhancing'],
+        description: 'If you\'re looking for a massage that combines intensity with deep relaxation, our Russian Massage might be exactly what you need...',
+        image: '/images/services/russian-massage.jpeg',
+        page: 'russian-massage.html'
+    },
+    {
+        title: 'Lymphatic Drainage Massage',
+        duration: '60 Min',
+        price: '₹ 2,000',
+        tags: ['Detoxification', 'Therapeutic'],
+        description: 'Feeling bloated, sluggish, or low on energy? A Lymphatic Drainage Massage might be just what your body is craving...',
+        image: '/images/services/lymphatic-drainage.png',
+        page: 'lymphatic-drainage.html'
+    },
+    {
+        title: 'Deep Tissue Massage',
+        duration: '90 Min',
+        price: '₹ 3,000',
+        tags: ['Restorative', 'Pain Relief'],
+        description: 'Struggling with persistent muscle aches or stiffness? Discover how our Deep Tissue Massage can bring lasting relief and deep relaxation...',
+        image: '/images/services/deep-tissue-massage.webp',
+        page: 'deep-tissue-massage.html'
+    },
+    {
+        title: 'Thai Massage',
+        duration: '60 Min',
+        price: '₹ 2,000',
+        tags: ['Energy Flow', 'Enhanced Flexibility'],
+        description: 'Looking to feel more flexible, energized, and centered? Discover the ancient healing powers of our authentic Thai Massage experience...',
+        image: '/images/services/thai-massage.jpg',
+        page: 'thai-massage.html'
+    },
+    {
+        title: 'Shiatsu Massage',
+        duration: '75 Min',
+        price: '₹ 2,500',
+        tags: ['Emotional Well-being', 'Recharge'],
+        description: 'Craving a healing massage that aligns body and mind? Discover the powerful benefits of our authentic Shiatsu Massage therapy...',
+        image: '/images/services/shiatsu-massage.jpg',
+        page: 'shiatsu-massage.html'
+    },
+    {
+        title: 'Aromatherapy Massage',
+        duration: '60 Min',
+        price: '₹ 2,000',
+        tags: ['Body Nourishment', 'Stress Relief'],
+        description: 'Need a calming escape for your senses and soul? Let our Aromatherapy Massage take you on a fragrant journey of relaxation...',
+        image: '/images/services/aromatherapy-massage.webp',
+        page: 'aromatherapy-massage.html'
+    }
+];
 
-    // Render Services Paging
-    const servicesContainer = document.querySelector('.services-slider');
+const servicesContainer = document.querySelector('.services-slider');
+if (servicesContainer) {
     let currentPage = 0;
     function getCardsPerView() {
         return window.innerWidth >= 992 ? 3 : window.innerWidth >= 768 ? 2 : 1;
@@ -118,13 +132,23 @@ document.addEventListener('DOMContentLoaded', function() {
                             ${service.tags.map(tag => `<span class="badge">${tag}</span>`).join('')}
                         </div>
                         <p class="card-text">${service.description}</p>
-                        <a href="tel:+918329945463" class="btn btn-primary w-100">Book Now</a>
+                        <button class="btn btn-primary w-100 learn-more-btn" data-page="${service.page}">Learn more</button>
                     </div>
                 </div>
             `;
         });
         html += '</div>';
         servicesContainer.innerHTML = html;
+
+        // Add event listeners for "Learn more" buttons
+        servicesContainer.querySelectorAll('.learn-more-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const page = btn.getAttribute('data-page');
+                if (page) {
+                    window.location.href = page;
+                }
+            });
+        });
     }
     function renderServicesDots() {
         let dotsHtml = '<div class="scroll-indicators">';
@@ -185,33 +209,35 @@ document.addEventListener('DOMContentLoaded', function() {
             renderServicesSlider();
         }, 250);
     });
+}
 
-    // FAQ Data
-    const faqs = [
-        {
-            question: 'What types of massages do you offer?',
-            answer: 'We offer a wide range of therapies including Deep Tissue, Aromatherapy, Thai, Shiatsu, Lymphatic Drainage, and Russian Massage—all tailored to your individual needs.'
-        },
-        {
-            question: 'Do I need to book an appointment in advance?',
-            answer: 'While walk-ins are welcome, we recommend booking in advance to ensure your preferred time and therapist are available.'
-        },
-        {
-            question: 'Are your therapists certified?',
-            answer: 'Yes, all our therapists are internationally trained and certified, ensuring safe, professional, and effective treatments every time.'
-        },
-        {
-            question: 'Do you have private facilities like showers and steam rooms?',
-            answer: 'Absolutely. Each of our treatment suites includes a private steam and shower facility for your comfort and convenience.'
-        },
-        {
-            question: 'What products do you use during treatments?',
-            answer: 'We use only premium-grade, skin-safe, and ethically sourced products, including essential oils and herbal blends curated for holistic wellness.'
-        }
-    ];
+// FAQ Data
+const faqs = [
+    {
+        question: 'What types of massages do you offer?',
+        answer: 'We offer a wide range of therapies including Deep Tissue, Aromatherapy, Thai, Shiatsu, Lymphatic Drainage, and Russian Massage—all tailored to your individual needs.'
+    },
+    {
+        question: 'Do I need to book an appointment in advance?',
+        answer: 'While walk-ins are welcome, we recommend booking in advance to ensure your preferred time and therapist are available.'
+    },
+    {
+        question: 'Are your therapists certified?',
+        answer: 'Yes, all our therapists are internationally trained and certified, ensuring safe, professional, and effective treatments every time.'
+    },
+    {
+        question: 'Do you have private facilities like showers and steam rooms?',
+        answer: 'Absolutely. Each of our treatment suites includes a private steam and shower facility for your comfort and convenience.'
+    },
+    {
+        question: 'What products do you use during treatments?',
+        answer: 'We use only premium-grade, skin-safe, and ethically sourced products, including essential oils and herbal blends curated for holistic wellness.'
+    }
+];
 
-    // Render FAQs
-    const faqContainer = document.getElementById('faqAccordion');
+// Render FAQs
+const faqContainer = document.getElementById('faqAccordion');
+if (faqContainer) {
     faqs.forEach((faq, index) => {
         const faqItem = `
             <div class="accordion-item">
@@ -229,148 +255,147 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         faqContainer.innerHTML += faqItem;
     });
+}
 
-    // Smooth Scroll for Navigation Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // Add scroll event listener for header
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+// Smooth Scroll for Navigation Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         }
     });
+});
 
-    // Testimonial Slider Logic
-    const testimonials = [
-        {
-            name: 'Priya S.',
-            subtitle: 'Eternal Touch Spa, Candolim',
-            image: '/images/placeholder.svg',
-            text: '“Absolutely the best spa experience I\'ve ever had. The ambiance is serene and the therapists are true professionals!”'
-        },
-        {
-            name: 'Rahul M.',
-            subtitle: 'Eternal Touch Spa, Candolim',
-            image: '/images/placeholder.svg',
-            text: '“The deep tissue massage was incredible. I left feeling completely rejuvenated. Highly recommend Eternal Touch!”'
-        },
-        {
-            name: 'Sneha K.',
-            subtitle: 'Eternal Touch Spa, Candolim',
-            image: '/images/placeholder.svg',
-            text: '“Impeccable hygiene and a truly relaxing environment. The aromatherapy session was just what I needed.”'
-        }
-    ];
+// Add scroll event listener for header
+const header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
 
-    let testimonialIndex = 0;
-    const testimonialSlide = document.querySelector('.testimonial-slide');
-    const testimonialPrev = document.getElementById('testimonialPrev');
-    const testimonialNext = document.getElementById('testimonialNext');
+// Testimonial Slider Logic
+const testimonials = [
+    {
+        name: 'Priya S.',
+        subtitle: 'Eternal Touch Spa, Candolim',
+        text: '“Absolutely the best spa experience I\'ve ever had. The ambiance is serene and the therapists are true professionals!”'
+    },
+    {
+        name: 'Rahul M.',
+        subtitle: 'Eternal Touch Spa, Candolim',
+        text: '“The deep tissue massage was incredible. I left feeling completely rejuvenated. Highly recommend Eternal Touch!”'
+    },
+    {
+        name: 'Sneha K.',
+        subtitle: 'Eternal Touch Spa, Candolim',
+        text: '“Impeccable hygiene and a truly relaxing environment. The aromatherapy session was just what I needed.”'
+    }
+];
 
-    function renderTestimonial(idx) {
-        const t = testimonials[idx];
-        testimonialSlide.innerHTML = `
-            <div class="d-flex flex-column flex-md-row align-items-center text-center text-md-start">
-                <img src="${t.image}" alt="Guest" class="rounded-circle me-md-4 mb-3 mb-md-0" style="width:70px;height:70px;object-fit:cover;">
-                <div>
-                    <div style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--primary-color);font-weight:600;">${t.name}</div>
-                    <div style="font-size:1rem;color:#888;">${t.subtitle}</div>
-                    <div class="testimonial-text mt-3 mb-2">${t.text}</div>
-                </div>
+let testimonialIndex = 0;
+const testimonialSlide = document.querySelector('.testimonial-slide');
+const testimonialPrev = document.getElementById('testimonialPrev');
+const testimonialNext = document.getElementById('testimonialNext');
+
+function renderTestimonial(idx) {
+    const t = testimonials[idx];
+    testimonialSlide.innerHTML = `
+        <div class="d-flex flex-column flex-md-row align-items-center text-center text-md-start">
+            <div>
+                <div style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--primary-color);font-weight:600;">${t.name}</div>
+                <div style="font-size:1rem;color:#888;">${t.subtitle}</div>
+                <div class="testimonial-text mt-3 mb-2">${t.text}</div>
             </div>
-        `;
-    }
+        </div>
+    `;
+}
 
-    if (testimonialSlide && testimonialPrev && testimonialNext) {
-        testimonialPrev.addEventListener('click', function() {
-            testimonialIndex = (testimonialIndex - 1 + testimonials.length) % testimonials.length;
-            renderTestimonial(testimonialIndex);
-        });
-        testimonialNext.addEventListener('click', function() {
-            testimonialIndex = (testimonialIndex + 1) % testimonials.length;
-            renderTestimonial(testimonialIndex);
-        });
+if (testimonialSlide && testimonialPrev && testimonialNext) {
+    testimonialPrev.addEventListener('click', function() {
+        testimonialIndex = (testimonialIndex - 1 + testimonials.length) % testimonials.length;
         renderTestimonial(testimonialIndex);
-    }
+    });
+    testimonialNext.addEventListener('click', function() {
+        testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+        renderTestimonial(testimonialIndex);
+    });
+    renderTestimonial(testimonialIndex);
+}
 
-    // Auto-scroll for gallery-slider (seamless infinite) + manual arrows
-    function autoScrollGallery() {
-        const gallery = document.querySelector('.gallery-slider.auto-scroll');
-        if (!gallery) return;
-        // Duplicate gallery content for seamless scroll
-        if (!gallery.dataset.duplicated) {
-            gallery.innerHTML += gallery.innerHTML;
-            gallery.dataset.duplicated = 'true';
-        }
-        let scrollAmount = 1;
-        let isHovered = false;
-        function scrollStep() {
-            if (!isHovered) {
-                // If we've scrolled past the original content, reset to start
-                if (gallery.scrollLeft >= gallery.scrollWidth / 2) {
-                    gallery.scrollLeft = 0;
-                } else {
-                    gallery.scrollLeft += scrollAmount;
-                }
-            }
-            requestAnimationFrame(scrollStep);
-        }
-        gallery.addEventListener('mouseenter', () => { isHovered = true; });
-        gallery.addEventListener('mouseleave', () => { isHovered = false; });
-        // Manual arrow scroll
-        const prevBtn = document.getElementById('galleryPrev');
-        const nextBtn = document.getElementById('galleryNext');
-        if (prevBtn && nextBtn) {
-            prevBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                gallery.scrollLeft -= gallery.offsetWidth * 0.7;
-            });
-            nextBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                gallery.scrollLeft += gallery.offsetWidth * 0.7;
-            });
-        }
-        scrollStep();
+// Auto-scroll for gallery-slider (seamless infinite) + manual arrows
+function autoScrollGallery() {
+    const gallery = document.querySelector('.gallery-slider.auto-scroll');
+    if (!gallery) return;
+    // Duplicate gallery content for seamless scroll
+    if (!gallery.dataset.duplicated) {
+        gallery.innerHTML += gallery.innerHTML;
+        gallery.dataset.duplicated = 'true';
     }
-    
-    // Initialize gallery immediately
-    autoScrollGallery();
-    
-    // Gallery blocker logic for arrow buttons
-    const blocker = document.querySelector('.gallery-blocker');
+    let scrollAmount = 1;
+    let isHovered = false;
+    function scrollStep() {
+        if (!isHovered) {
+            // If we've scrolled past the original content, reset to start
+            if (gallery.scrollLeft >= gallery.scrollWidth / 2) {
+                gallery.scrollLeft = 0;
+            } else {
+                gallery.scrollLeft += scrollAmount;
+            }
+        }
+        requestAnimationFrame(scrollStep);
+    }
+    gallery.addEventListener('mouseenter', () => { isHovered = true; });
+    gallery.addEventListener('mouseleave', () => { isHovered = false; });
+    // Manual arrow scroll
     const prevBtn = document.getElementById('galleryPrev');
     const nextBtn = document.getElementById('galleryNext');
-    if (blocker && prevBtn && nextBtn) {
-        [prevBtn, nextBtn].forEach(btn => {
-            btn.addEventListener('mouseenter', () => blocker.style.pointerEvents = 'none');
-            btn.addEventListener('mouseleave', () => blocker.style.pointerEvents = 'all');
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            gallery.scrollLeft -= gallery.offsetWidth * 0.7;
+        });
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            gallery.scrollLeft += gallery.offsetWidth * 0.7;
         });
     }
+    scrollStep();
+}
 
-    // Navbar toggler icon swap
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.getElementById('navbarNav');
-    const burgerIcon = navbarToggler.querySelector('.navbar-toggler-icon');
-    const closeIcon = navbarToggler.querySelector('.close-icon');
+// Initialize gallery immediately
+autoScrollGallery();
 
-    function updateTogglerIcon() {
-        const isOpen = navbarCollapse.classList.contains('show');
+// Gallery blocker logic for arrow buttons
+const blocker = document.querySelector('.gallery-blocker');
+const prevBtn = document.getElementById('galleryPrev');
+const nextBtn = document.getElementById('galleryNext');
+if (blocker && prevBtn && nextBtn) {
+    [prevBtn, nextBtn].forEach(btn => {
+        btn.addEventListener('mouseenter', () => blocker.style.pointerEvents = 'none');
+        btn.addEventListener('mouseleave', () => blocker.style.pointerEvents = 'all');
+    });
+}
+
+// Navbar toggler icon swap
+const navbarToggler = document.querySelector('.navbar-toggler');
+const navbarCollapse = document.getElementById('navbarNav');
+const burgerIcon = navbarToggler ? navbarToggler.querySelector('.navbar-toggler-icon') : null;
+const closeIcon = navbarToggler ? navbarToggler.querySelector('.close-icon') : null;
+
+function updateTogglerIcon() {
+    if (!navbarCollapse) return;
+    const isOpen = navbarCollapse.classList.contains('show');
+    if (burgerIcon && closeIcon) {
         if (isOpen) {
             burgerIcon.classList.add('d-none');
             closeIcon.classList.remove('d-none');
@@ -379,79 +404,174 @@ document.addEventListener('DOMContentLoaded', function() {
             closeIcon.classList.add('d-none');
         }
     }
+}
 
-    // Listen for Bootstrap collapse events (use 'shown' and 'hidden' for accurate state)
+if (navbarToggler && navbarCollapse && burgerIcon && closeIcon) {
     navbarCollapse.addEventListener('shown.bs.collapse', updateTogglerIcon);
     navbarCollapse.addEventListener('hidden.bs.collapse', updateTogglerIcon);
-    // Remove previous listeners to avoid double-calling
     navbarCollapse.removeEventListener('show.bs.collapse', updateTogglerIcon);
     navbarCollapse.removeEventListener('hide.bs.collapse', updateTogglerIcon);
-    // Also update on page load
     updateTogglerIcon();
+}
 
-    // Collapsible preheader logic
-    const preheader = document.getElementById('preheader');
-    const closeBtn = document.querySelector('.preheader-close');
-    if (preheader && closeBtn) {
-        closeBtn.addEventListener('click', function() {
-            preheader.classList.add('collapsed');
-        });
+// Collapsible preheader logic
+const preheader = document.getElementById('preheader');
+const closeBtn = document.querySelector('.preheader-close');
+if (preheader && closeBtn) {
+    closeBtn.addEventListener('click', function() {
+        preheader.classList.add('collapsed');
+    });
+}
+
+// Therapists Slider Logic
+const therapistsSlider = document.querySelector('.therapists-slider');
+const therapistsPrev = document.getElementById('therapistsPrev');
+const therapistsNext = document.getElementById('therapistsNext');
+
+function getTherapistsScrollAmount() {
+    return window.innerWidth >= 992 ? 3 : 1;
+}
+function getTherapistItemWidth() {
+    const item = therapistsSlider ? therapistsSlider.querySelector('.therapist-item') : null;
+    if (!item) return 300;
+    const style = window.getComputedStyle(item);
+    const width = item.offsetWidth;
+    const marginRight = parseInt(style.marginRight) || 32;
+    return width + marginRight;
+}
+
+function scrollTherapists(direction) {
+    const scrollAmount = getTherapistsScrollAmount();
+    const itemWidth = getTherapistItemWidth();
+    const scrollByValue = itemWidth * scrollAmount * direction;
+    therapistsSlider.scrollBy({
+        left: scrollByValue,
+        behavior: 'smooth'
+    });
+}
+
+if (therapistsSlider && therapistsPrev && therapistsNext) {
+    therapistsPrev.addEventListener('click', function() {
+        scrollTherapists(-1);
+    });
+    therapistsNext.addEventListener('click', function() {
+        scrollTherapists(1);
+    });
+    // Update scroll logic on resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            // No-op, but ensures scroll logic uses updated item width/amount
+        }, 200);
+    });
+}
+
+// Gallery Slider Logic for landing.html
+const gallerySlider = document.querySelector('.gallery-slider');
+const galleryPrev = document.getElementById('galleryPrev');
+const galleryNext = document.getElementById('galleryNext');
+
+if (gallerySlider && galleryPrev && galleryNext) {
+    function getGalleryScrollAmount() {
+        // Each item is 300px wide + 16px gap (approx)
+        return window.innerWidth >= 992 ? 3 : 1;
     }
-
-    // Therapists Slider Logic
-    const therapistsSlider = document.querySelector('.therapists-slider');
-    const therapistsPrev = document.getElementById('therapistsPrev');
-    const therapistsNext = document.getElementById('therapistsNext');
-
-    if (therapistsSlider && therapistsPrev && therapistsNext) {
-        const scrollAmount = window.innerWidth >= 992 ? 3 : 1; // Scroll 3 items on desktop, 1 on mobile
-        const therapistItems = therapistsSlider.querySelectorAll('.therapist-item');
-        const itemWidth = therapistItems[0].offsetWidth + 32; // Include gap
-
-        therapistsPrev.addEventListener('click', function() {
-            const currentScroll = therapistsSlider.scrollLeft;
-            const newScroll = Math.max(0, currentScroll - (itemWidth * scrollAmount));
-            therapistsSlider.scrollTo({
-                left: newScroll,
-                behavior: 'smooth'
-            });
-        });
-
-        therapistsNext.addEventListener('click', function() {
-            const currentScroll = therapistsSlider.scrollLeft;
-            const maxScroll = therapistsSlider.scrollWidth - therapistsSlider.clientWidth;
-            const newScroll = Math.min(maxScroll, currentScroll + (itemWidth * scrollAmount));
-            therapistsSlider.scrollTo({
-                left: newScroll,
-                behavior: 'smooth'
-            });
-        });
-
-        // Update scroll amount on window resize
-        window.addEventListener('resize', () => {
-            const newScrollAmount = window.innerWidth >= 992 ? 3 : 1;
-            // Recalculate item width after resize
-            const newItemWidth = therapistItems[0].offsetWidth + 32;
-            
-            // Update the scroll amount for future clicks
-            therapistsPrev.onclick = function() {
-                const currentScroll = therapistsSlider.scrollLeft;
-                const newScroll = Math.max(0, currentScroll - (newItemWidth * newScrollAmount));
-                therapistsSlider.scrollTo({
-                    left: newScroll,
-                    behavior: 'smooth'
-                });
-            };
-
-            therapistsNext.onclick = function() {
-                const currentScroll = therapistsSlider.scrollLeft;
-                const maxScroll = therapistsSlider.scrollWidth - therapistsSlider.clientWidth;
-                const newScroll = Math.min(maxScroll, currentScroll + (newItemWidth * newScrollAmount));
-                therapistsSlider.scrollTo({
-                    left: newScroll,
-                    behavior: 'smooth'
-                });
-            };
-        });
+    function getGalleryItemWidth() {
+        const item = gallerySlider.querySelector('.gallery-item');
+        if (!item) return 300;
+        const style = window.getComputedStyle(item);
+        const width = item.offsetWidth;
+        const marginRight = parseInt(style.marginRight) || 16;
+        return width + marginRight;
     }
-}); 
+    galleryPrev.addEventListener('click', function() {
+        const scrollAmount = getGalleryScrollAmount();
+        const itemWidth = getGalleryItemWidth();
+        const currentScroll = gallerySlider.scrollLeft;
+        const newScroll = Math.max(0, currentScroll - (itemWidth * scrollAmount));
+        gallerySlider.scrollTo({
+            left: newScroll,
+            behavior: 'smooth'
+        });
+    });
+    galleryNext.addEventListener('click', function() {
+        const scrollAmount = getGalleryScrollAmount();
+        const itemWidth = getGalleryItemWidth();
+        const currentScroll = gallerySlider.scrollLeft;
+        const maxScroll = gallerySlider.scrollWidth - gallerySlider.clientWidth;
+        const newScroll = Math.min(maxScroll, currentScroll + (itemWidth * scrollAmount));
+        gallerySlider.scrollTo({
+            left: newScroll,
+            behavior: 'smooth'
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Landing Hero Slider Logic
+  const landingHeroSlider = document.getElementById('landingHeroSlider');
+  const heroPrev = document.getElementById('heroPrev');
+  const heroNext = document.getElementById('heroNext');
+
+  if (landingHeroSlider && heroPrev && heroNext) {
+      const slides = landingHeroSlider.querySelectorAll('.hero-slide-img');
+      console.log('Landing hero slider found:', slides.length, 'slides');
+      let current = 0;
+      
+      // Hide all except the first
+      slides.forEach((img, i) => img.style.display = i === 0 ? '' : 'none');
+      
+      function showSlide(index) {
+          slides[current].style.display = 'none';
+          current = index;
+          slides[current].style.display = '';
+          console.log('Switched to slide', current);
+      }
+      
+      function nextSlide() {
+          const next = (current + 1) % slides.length;
+          showSlide(next);
+      }
+      
+      function prevSlide() {
+          const prev = (current - 1 + slides.length) % slides.length;
+          showSlide(prev);
+      }
+      
+      // Event listeners for manual navigation
+      heroNext.addEventListener('click', nextSlide);
+      heroPrev.addEventListener('click', prevSlide);
+      
+      // Optional: Add keyboard navigation
+      document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') {
+              prevSlide();
+          } else if (e.key === 'ArrowRight') {
+              nextSlide();
+          }
+      });
+  } else {
+      console.log('Landing hero slider or navigation buttons NOT found');
+  }
+});
+
+// Testimonials Auto-Scroll Logic for landing.html
+const testimonialSlider = document.querySelector('.testimonial-slider');
+if (testimonialSlider) {
+    const testimonialSlides = testimonialSlider.querySelectorAll('.testimonial-slide');
+    let currentTestimonial = 0;
+    
+    // Hide all testimonials except the first
+    testimonialSlides.forEach((slide, index) => {
+        slide.style.display = index === 0 ? 'block' : 'none';
+    });
+    
+    // Auto-scroll testimonials
+    setInterval(() => {
+        testimonialSlides[currentTestimonial].style.display = 'none';
+        currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
+        testimonialSlides[currentTestimonial].style.display = 'block';
+        console.log('Switched to testimonial', currentTestimonial + 1);
+    }, 4000);
+} 
